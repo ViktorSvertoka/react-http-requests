@@ -33,7 +33,7 @@ function App() {
       );
 
       if (!response.ok) {
-        throw new Error('Что-то пошло не так...');
+        throw new Error('Something went wrong...');
       }
       const data = await response.json();
 
@@ -74,7 +74,7 @@ function App() {
     console.log(data);
   }
 
-  let content = <p>Шуток не найдено.</p>;
+  let content = <p>Jokes not found.</p>;
 
   if (jokes !== null && jokes !== undefined && jokes.length > 0) {
     content = <JokeList jokes={jokes} />;
@@ -85,7 +85,7 @@ function App() {
   }
 
   if (isLoading) {
-    content = <p>Загрузка шуток...</p>;
+    content = <p>Loading jokes...</p>;
   }
 
   return (
@@ -99,8 +99,8 @@ function App() {
       <section>
         {content}
         {/* {!isLoading && jokes.length > 0 && <JokeList jokes={jokes} />}
-        {!isLoading && jokes.length === 0 && !error && <p>Шуток не найдено.</p>}
-        {isLoading && <p>Загрузка шуток...</p>}
+        {!isLoading && jokes.length === 0 && !error && <p>Jokes not found.</p>}
+        {isLoading && <p>Loading jokes...</p>}
         {!isLoading && error && <p>{error}</p>} */}
       </section>
     </React.Fragment>
