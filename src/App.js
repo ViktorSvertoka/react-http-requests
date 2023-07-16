@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from 'react';
 
-import JokeList from "./components/JokeList";
-import "./App.css";
-import AddJoke from "./components/AddJoke";
+import JokeList from './components/JokeList';
+import './App.css';
+import AddJoke from './components/AddJoke';
 
 function App() {
   // const dummyJokes = [
@@ -29,11 +29,11 @@ function App() {
     setError(null);
     try {
       const response = await fetch(
-        "https://react-course-http-8220d-default-rtdb.firebaseio.com/jokes.json"
+        'https://react-http-requests-73c1e-default-rtdb.firebaseio.com/jokes.json'
       );
 
       if (!response.ok) {
-        throw new Error("Что-то пошло не так...");
+        throw new Error('Что-то пошло не так...');
       }
       const data = await response.json();
 
@@ -61,12 +61,12 @@ function App() {
 
   async function addJokeHandler(joke) {
     const response = await fetch(
-      "https://react-course-http-8220d-default-rtdb.firebaseio.com/jokes.json",
+      'https://react-http-requests-73c1e-default-rtdb.firebaseio.com/jokes.json',
       {
-        method: "POST",
+        method: 'POST',
         body: JSON.stringify(joke),
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       }
     );
